@@ -1,0 +1,69 @@
+.card.hovercard {
+  position: relative;
+  padding-top: 0;
+  overflow: hidden;
+  text-align: center;
+  background-color: rgba(214, 224, 226, 0.2);
+  text-decoration:none;
+}
+
+  .card.hovercard .cardheader {
+      background: url("/assets/zaman.jpg");
+      background-size:cover;
+      height: 255px;
+  }
+
+  .card.hovercard .avatar {
+      position: relative;
+      top: -90px;
+      margin-bottom: -70px;
+  }
+
+      .card.hovercard .avatar img {
+          width: 180px;
+          height: 180px;
+          max-width: 180px;
+          max-height: 180px;
+          -webkit-border-radius: 50%;
+          -moz-border-radius: 50%;
+          border-radius: 50%;
+          border: 5px solid rgba(255,255,255,0.5);
+      }
+
+  .card.hovercard .info {
+      padding: 4px 8px 10px;
+  }
+
+      .card.hovercard .info .title {
+          margin-bottom: 4px;
+          font-size: 24px;
+          line-height: 1;
+          color: #262626;
+          vertical-align: middle;
+      }
+
+      .card.hovercard .info .desc {
+          overflow: hidden;
+          font-size: 12px;
+          line-height: 20px;
+          color: #737373;
+          text-overflow: ellipsis;
+      }
+
+  .card.hovercard .bottom {
+      padding: 0 20px;
+      margin-bottom: 17px;
+  }
+
+   .bottom a {
+    margin-right: 10px;
+
+}
+
+
+.p {
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+

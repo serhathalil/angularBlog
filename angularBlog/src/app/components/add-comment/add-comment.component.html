@@ -1,0 +1,31 @@
+<div class="card bg-light mt-3">
+ <div class="card-body">
+    <div *ngIf="info!=null" class="alert" [ngClass]="{'alert-primary':success,'alert-danger':!success}">
+      {{info}}
+    </div>
+
+    <form  *ngIf="info==null" (ngSubmit)="onSubmit()" [formGroup]="commentForm">
+      <div class="form-container">
+            <mat-form-field>
+              <input formControlName="yorumAdSoyad" matInput placeholder="isim...">
+              <mat-error *ngIf="getControls.yorumAdSoyad.invalid">{{myvalidationService.GetValidationMessage(getControls.yorumAdSoyad,"isim")}}</mat-error>
+            </mat-form-field>
+
+            <mat-form-field>
+              <input formControlName="yorumEmail" matInput placeholder="email...">
+              <mat-error *ngIf="getControls.yorumEmail.invalid">{{myvalidationService.GetValidationMessage(getControls.yorumEmail,"email")}}</mat-error>
+
+            </mat-form-field>
+
+            <mat-form-field>
+              <textarea rows="5" formControlName="yorumIcerik" matInput placeholder="Yorum..."></textarea>
+              <mat-error *ngIf="getControls.yorumIcerik.invalid">{{myvalidationService.GetValidationMessage(getControls.yorumIcerik,"yorum")}}</mat-error>
+            </mat-form-field>
+
+            <button [disabled]="commentService.loading" mat-raised-button color="primary"><span *ngIf="commentService.loading" class="spinner-border spinner-border-sm" role="status"></span>Yorum Ekle</button>
+      </div>
+
+    </form>
+
+ </div>
+</div>

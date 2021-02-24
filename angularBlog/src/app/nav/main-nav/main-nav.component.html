@@ -1,0 +1,31 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+  <div class="container">
+    <a class="navbar-brand" href="#">Serhat Halil Silsüpür</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"
+      (click)="toggleCollapsed()">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div id="navbarSupportedContent" [ngClass]="{ collapse: collapsed, 'navbar-collapse': true }">
+      <ul class="navbar-nav mr-auto mb-lg-0">
+        <li class="nav-item" [ngClass]="{ active: pageActive == 1 }">
+          <a class="nav-link" routerLink="/" aria-current="page" href="#">Anasayfa</a>
+        </li>
+
+        <li class="nav-item" [ngClass]="{ active: pageActive == 2 }">
+          <a class="nav-link" routerLink="/hakkimda" aria-current="page" href="#">Hakkımda</a>
+        </li>
+
+        <li class="nav-item" [ngClass]="{ active: pageActive == 3 }">
+          <a class="nav-link" routerLink="/iletisim" aria-current="page" href="#">İletişim</a>
+        </li>
+      </ul>
+      <form class="form-inline my-2 my-lg-0">
+        <input #searchText class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" />
+        <button (click)="search(searchText.value)" class="btn btn-outline-success my-2 my-sm-0" type="button">
+          Search
+        </button>
+      </form>
+    </div>
+  </div>
+</nav>

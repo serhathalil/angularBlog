@@ -1,0 +1,30 @@
+<div class="card border-primary mt-2">
+  <div class="card-header">
+    <strong>Arşiv</strong>
+  </div>
+  <div class="card-body" style="padding-bottom: 15px;">
+    <div *ngIf="archives.length == 0" class="d-flex justify-content-center">
+      <div class="spinner-border" role="status">
+        <span class="sr-only">Loading...</span>
+      </div>
+    </div>
+    <!-- <h3 *ngFor="let item of archives">
+      <a
+        class="btn btn-link  text-left"
+        [routerLink]="['/arsiv',item.year,item.month]"
+        ><i class="fa fa-angle-right" aria-hidden="true"></i> {{ item.year }} {{ item.mounthName }} ({{item.count}})</a
+      >
+    </h3> -->
+
+
+    <mat-form-field appearance="fill"  >
+      <mat-label>Seçiniz</mat-label>
+      <mat-select>
+        <mat-option *ngFor="let item of archives" [value]="item.year"  [routerLink]="['/arsiv',item.year,item.month]">
+          {{ item.year }} {{ item.mounthName }} ({{item.count}})
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+
+  </div>
+</div>

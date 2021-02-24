@@ -1,0 +1,20 @@
+<h1>Yorumlar({{ comments.length }})</h1>
+<hr>
+<div *ngIf="loading" class="d-flex justify-content-center">
+  <div class="spinner-border" role="status">
+    <span class="visually-hidden">Loading...</span>
+  </div>
+</div>
+
+<div id="commentWrapper" *ngIf="!loading">
+  <div *ngFor="let item of comments" class="card bg-light mt-3">
+    <div class="card-header">
+      <h5><i class="fa fa-user mr-1"></i> {{ item.yorumAdSoyad }}  <i class="fa fa-envelope ml-4"></i> {{ item.yorumEmail }}  <span class=float-right>{{item.yorumTarih | date: 'dd/MM/yyyy'}}</span> </h5>
+
+    </div>
+    <div class="card-body">
+      <p class="card-text">{{ item.yorumIcerik }}</p>
+    </div>
+
+  </div>
+</div>

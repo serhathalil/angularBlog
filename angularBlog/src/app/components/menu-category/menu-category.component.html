@@ -1,0 +1,21 @@
+<div class="card border-primary">
+  <div class="card-header">Kategoriler</div>
+  <div class="card-body text-primary">
+
+
+    <div *ngIf="categories.length==0" class="d-flex justify-content-center">
+      <div class="spinner-border" role="status">
+        <span class="sr-only">Loading...</span>
+      </div>
+    </div>
+
+
+    <h3 *ngFor="let item of categories">
+      <strong>
+        <a [routerLink]="['/kategori',item.kategoriAdi | urlformat ,item.kategoriId]" class="btn btn-link"><i
+             class="fa fa-arrow-circle-right"></i>  {{item.kategoriAdi}} <!--({{item.kategoriAdet}})-->  </a>
+      </strong>
+    </h3>
+
+  </div>
+</div>
